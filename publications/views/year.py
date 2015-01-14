@@ -20,6 +20,8 @@ def year(request, year=None):
 			continue
 		if not years or (years[-1][0] != publication.year):
 			years.append((publication.year, []))
+		publication.keywords = []
+		publication.keywords_escaped = []
 		years[-1][1].append(publication)
 
 	if 'plain' in request.GET:
