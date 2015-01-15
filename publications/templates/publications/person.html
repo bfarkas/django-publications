@@ -11,7 +11,8 @@
 		<div class="special_links">
 			<a href="?plain">Plain text</a>,
 			<a href="?ris">RIS</a>,
-			<a href="?bibtex">BibTex</a>
+			<a href="?bibtex">BibTex</a>,
+			<a href="?rss">RSS</a>
 		</div>
 		{% for type in types %}
 			<h1>{{ type.description }}{% if forloop.first %} by {{ author }}{% endif %}</h1>

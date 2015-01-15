@@ -52,12 +52,16 @@ def person(request, name):
 		name_simple = Publication.simplify_name(names[0][0] + '. ' + names[-1])
 		for publication in query:
 			if name_simple in publication.authors_list_simple:
+				publication.keywords = []
+				publication.keywords_escaped = []
 				publications.append(publication)
 				publications_by_type[publication.type_id].append(publication)
 
 	elif len(names) > 0:
 		for publication in query:
 			if Publication.simplify_name(names[-1].lower()) in publication.authors_list_simple:
+				publication.keywords = []
+				publication.keywords_escaped = []
 				publications.append(publication)
 				publications_by_type[publication.type_id].append(publication)
 
