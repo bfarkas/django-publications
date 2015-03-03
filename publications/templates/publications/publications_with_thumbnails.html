@@ -6,7 +6,7 @@
 			{% if publication.code %}
 				<a href="{{ publication.code }}"><img src="{{ MEDIA_URL }}{{ publication.thumbnail }}" style="width: 100px; height: 100px;" /></a>
 			{% else %}
-				<a href="/publications/{{ publication.pk }}/"><img src="{{ MEDIA_URL }}{{ publication.thumbnail }}" style="width: 100px; height: 100px;" /></a>
+				<a href="https://teamwork.c3e.cs.tu-bs.de/publications/{{ publication.pk }}/"><img src="{{ MEDIA_URL }}{{ publication.thumbnail }}" style="width: 100px; height: 100px;" /></a>
 			{% endif %}
 		{% endif %}
 		</td>
