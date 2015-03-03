@@ -15,7 +15,14 @@ def list(request, list):
 
 	list = list[0]
 	publications = list.publication_set.all()
-	publications = publications.order_by('-year', '-month', '-id')
+	publications_ordered = publications.order_by('-year', '-month', '-id')
+
+	# remove keywords
+	publications = []
+	for publication in publications_ordered:
+		publication.keywords = []
+		publication.keywords_escaped = []
+		publications.append(publication)
 
 	if 'plain' in request.GET:
 		return render_to_response('publications/publications.txt', {
