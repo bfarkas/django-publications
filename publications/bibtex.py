@@ -56,8 +56,9 @@ def parse(string):
 	for key, value in special_chars:
 		string = string.replace(key, value)
 
+	
 	# split into BibTex entries
-	entries = re.findall(r'(?u)@(\w+)[ \t]?{[ \t\n]*([^,\s]*)[ \t]*,?\s*((?:[^=,\s]+\s*\=\s*(?:"[^"]*"|{(?:[^{}]*|{[^{}]*})*}|[^,}]*),?\s*?)+)\s*}', string)
+	entries = re.findall(r'(?u)@(\w+)[ \t]?{[ \t\n\r]*([^,\s]*)[ \t]*,?\s*((?:[^=,\s]+\s*\=\s*(?:"[^"]*"|{(?:[^{}]*|{[^{}]*})*}|[^,}]*),?\s*?)+)\s*}', string)
 
 	for entry in entries:
 		# parse entry
